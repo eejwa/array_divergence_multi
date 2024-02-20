@@ -516,9 +516,9 @@ for d,depth in enumerate(depths):
     #          transform=ccrs.PlateCarree(), cmap='seismic', vmin=vmin, vmax=max_divergence)
 
 
-    # c = ax.pcolor(los_grid, las_grid, divergence,
-    #          transform=ccrs.PlateCarree(), cmap='seismic',
-    #          vmin=-1, vmax=1)
+    c = ax.pcolor(los_grid, las_grid, divergence,
+             transform=ccrs.PlateCarree(), cmap='seismic',
+             vmin=-1, vmax=1)
 
     ax.coastlines(zorder=2, resolution='50m', color='black', linewidth=1, alpha=0.5)
 
@@ -568,8 +568,8 @@ for d,depth in enumerate(depths):
 
     # cax = fig.add_axes([ax.get_position().x1 + 0.025, ax.get_position().y0,0.02, ax.get_position().height])
 
-    # plt.colorbar(c, ax=ax, label='Divergence ($s/^{\circ^2}$)', location='right',
-    #              shrink=1)
+    plt.colorbar(c, ax=ax, label='Divergence ($s/^{\circ^2}$)', location='right',
+                 shrink=1)
 
 
 
@@ -580,7 +580,7 @@ for d,depth in enumerate(depths):
 
     # ax.set_extent([-131.9792592737045, -62.44319631753537, 23.44829029617145, 50.40109937197289])
 
-    gl = ax.gridlines(draw_labels=True, linewidth=0, color='gray', alpha=0.5, linestyle='--')
+    gl = ax.gridlines(draw_labels=True, linewidth=0.5, color='gray', alpha=0.5, linestyle='--')
 
     gl.xlines = True
     gl.ylines = True
@@ -710,7 +710,7 @@ for d,depth in enumerate(depths):
     # os.rename(f"./vector_bin_{depth}.pdf", f"{dir}/vector_bin_{depth}.pdf")
 
 
-    gl2 = ax2.gridlines(draw_labels=True, linewidth=0.0, color='gray', alpha=0.5, linestyle='--')
+    gl2 = ax2.gridlines(draw_labels=True, linewidth=0.5, color='gray', alpha=0.5, linestyle='--')
 
     gl2.xlines = True
     gl2.ylines = True
@@ -754,7 +754,7 @@ for d,depth in enumerate(depths):
     # os.rename(f"./vector_bin_{depth}.pdf", f"{dir}/vector_bin_{depth}.pdf")
 
 
-    gl3 = ax3.gridlines(draw_labels=True, linewidth=0.0, color='black', alpha=0.5, linestyle='--')
+    gl3 = ax3.gridlines(draw_labels=True, linewidth=0.5, color='black', alpha=0.5, linestyle='--')
 
     gl3.xlines = True
     gl3.ylines = True
@@ -787,8 +787,8 @@ for d,depth in enumerate(depths):
     
     
     # UNCOMMENT TO SAVE SUMMARY
-    # plt.savefig(f"summary_plot_r{region}_fl{fmin}_fh{fmax}_d{depth}_side_{side}.pdf",
-    #             transparent=True)
+    plt.savefig(f"test_plot_r{region}_fl{fmin}_fh{fmax}_d{depth}_side_{side}.pdf",
+                transparent=True)
 
     # plt.tight_layout()
     plt.show()
