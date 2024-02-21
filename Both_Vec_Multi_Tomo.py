@@ -57,7 +57,7 @@ side='r'
 depths = np.arange(0, 2900, 100)
 depths = np.append(depths, 2891)
 
-depths = [1800]
+# depths = [1800]
 gird_lons = np.arange(-360,375, 15)
 gird_lats = np.arange(-90,105, 15)
 
@@ -578,7 +578,7 @@ for d,depth in enumerate(depths):
 
     # ax.set_extent(extents[region])
     gl1 = ax1.gridlines(crs=ccrs.PlateCarree(), draw_labels=True,
-                      linewidth=0, color='gray', alpha=0.5, linestyle='--')
+                      linewidth=0.5, color='gray', alpha=0.5, linestyle='--')
 
     gl1.xlines = True
     gl1.ylines = True
@@ -590,8 +590,8 @@ for d,depth in enumerate(depths):
     gl1.xlocator = mticker.FixedLocator(gird_lons)
     gl1.ylocator = mticker.FixedLocator(gird_lats)
 
-    plt.savefig(f"./multi_prop_{depth}.pdf")
-    os.rename(f"./multi_prop_{depth}.pdf", f"{dir}/multi_prop_{depth}.pdf")
+    plt.savefig(f"./multi_prop_{depth}_{fmin}_{fmax}.pdf")
+    os.rename(f"./multi_prop_{depth}_{fmin}_{fmax}.pdf", f"{dir}/multi_prop_{depth}_{fmin}_{fmax}.pdf")
 
 
     fig2 = plt.figure(figsize=(12,8), facecolor='none')
@@ -653,7 +653,7 @@ for d,depth in enumerate(depths):
 
     # ax.set_extent(extents[region])
     gl2 = ax2.gridlines(crs=ccrs.PlateCarree(), draw_labels=True,
-                      linewidth=0, color='gray', alpha=0.5, linestyle='--')
+                      linewidth=0.5, color='gray', alpha=0.5, linestyle='--')
 
     gl2.xlines = True
     gl2.ylines = True
@@ -665,8 +665,8 @@ for d,depth in enumerate(depths):
     gl2.xlocator = mticker.FixedLocator(gird_lons)
     gl2.ylocator = mticker.FixedLocator(gird_lats)
 
-    plt.savefig(f"./vector_bin_{depth}.pdf")
-    os.rename(f"./vector_bin_{depth}.pdf", f"{dir}/vector_bin_{depth}.pdf")
+    plt.savefig(f"./vector_bin_{depth}_{fmin}_{fmax}.pdf")
+    os.rename(f"./vector_bin_{depth}_{fmin}_{fmax}.pdf", f"{dir}/vector_bin_{depth}_{fmin}_{fmax}.pdf")
 
 
 
@@ -777,7 +777,7 @@ for d,depth in enumerate(depths):
 
     # ax.set_extent(extents[region])
     gl4 = ax4.gridlines(crs=ccrs.PlateCarree(), draw_labels=True,
-                      linewidth=0, color='gray', alpha=0.5, linestyle='--')
+                      linewidth=0.5, color='gray', alpha=0.5, linestyle='--')
 
     gl4.xlines = True
     gl4.ylines = True
@@ -789,8 +789,8 @@ for d,depth in enumerate(depths):
     gl4.xlocator = mticker.FixedLocator(gird_lons)
     gl4.ylocator = mticker.FixedLocator(gird_lats)
 
-    plt.savefig(f"./multi_locus_{depth}.pdf")
-    os.rename(f"./multi_locus_{depth}.pdf", f"{dir}/multi_locus_{depth}.pdf")
+    plt.savefig(f"./multi_locus_{depth}_{fmin}_{fmax}.pdf")
+    os.rename(f"./multi_locus_{depth}_{fmin}_{fmax}.pdf", f"{dir}/multi_locus_{depth}_{fmin}_{fmax}.pdf")
 
     plt.show()
     plt.close()
